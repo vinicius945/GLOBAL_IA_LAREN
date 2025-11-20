@@ -25,7 +25,7 @@ try:
         {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"}
     ]
 
-    # A PERSONA DO CHATBOT
+    
     system_prompt = """
     Você é a "Laren", uma assistente de bem-estar e saúde mental da empresa LTAKN.
     
