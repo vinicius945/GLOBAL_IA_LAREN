@@ -17,7 +17,6 @@ O objetivo principal é demonstrar uma arquitetura moderna de microsserviços ap
 * Utiliza **RabbitMQ** para o processamento assíncrono de relatórios de risco.
 
 ### 🟠 API Python (Microsserviço IA - Laren)
-* Atua como o "cérebro" da solução, hospedada no **Render**.
 * Recebe dados brutos dos funcionários enviados pelo Java.
 * Utiliza o modelo **Google Gemini (LLM)** para gerar diagnósticos empáticos e recomendações de saúde mental.
 * Retorna respostas em JSON para exibição no portal.
@@ -64,7 +63,7 @@ O sistema segue o modelo de **Microsserviços e MVC**, com integração via REST
 
 ## 🔗 Links do Projeto
 
-* **Link do Vídeo:** [Insira seu Link Aqui]
+* **Link do Vídeo:** 
 * **Link do Repositório IA:** [https://github.com/vinicius945/GLOBAL_IA_LAREN](https://github.com/vinicius945/GLOBAL_IA_LAREN)
 * **Deploy API IA:** [https://api-ia-laren.onrender.com](https://api-ia-laren.onrender.com)
 
