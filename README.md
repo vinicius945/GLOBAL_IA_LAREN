@@ -31,6 +31,38 @@ O objetivo principal é demonstrar uma arquitetura moderna de microsserviços ap
 
 O sistema segue o modelo de **Microsserviços e MVC**, com integração via REST e persistência em nuvem.
 
+graph TD
+    subgraph Cliente
+        App[📱 App Mobile / Web]
+    end
+
+    subgraph "Azure Cloud (Infraestrutura Principal)"
+        Java[☕ Backend Java Spring Boot<br/>(Azure Web App)]
+        SQL[(🗄️ Azure SQL Database)]
+    end
+
+    subgraph "Plataforma de IA"
+        Python[🐍 API IA Laren<br/>(Render PaaS)]
+        Gemini[✨ Google Gemini API]
+    end
+
+    subgraph "Mensageria & Async"
+        Rabbit[🐇 RabbitMQ<br/>(CloudAMQP)]
+    end
+
+    %% Fluxos
+    App -->|HTTPS / REST| Java
+    Java <-->|JDBC| SQL
+    Java <-->|AMQP| Rabbit
+    Java -->|HTTPS / POST| Python
+    Python -->|API Key| Gemini
+
+    %% Estilização (Opcional)
+    style Java fill:#d4ac0d,stroke:#333,stroke-width:2px
+    style Python fill:#3776ab,stroke:#333,stroke-width:2px,color:white
+    style Gemini fill:#8e44ad,stroke:#333,stroke-width:2px,color:white
+    style SQL fill:#0078d4,stroke:#333,stroke-width:2px,color:white
+
 **🔄 Fluxo de Dados:**
 1.  O Gestor acessa o Portal Java e visualiza a equipe.
 2.  Ao solicitar uma análise, o Java envia os dados do funcionário para a API Python.
@@ -63,7 +95,7 @@ O sistema segue o modelo de **Microsserviços e MVC**, com integração via REST
 
 ## 🔗 Links do Projeto
 
-* **Link do Vídeo:** 
+* **Link do Vídeo:** [https://youtu.be/g5DaZzdIV5g)
 * **Link do Repositório IA:** [https://github.com/vinicius945/GLOBAL_IA_LAREN](https://github.com/vinicius945/GLOBAL_IA_LAREN)
 * **Deploy API IA:** [https://api-ia-laren.onrender.com](https://api-ia-laren.onrender.com)
 
